@@ -1,0 +1,5 @@
+## common ignore patterns for Vim
+.*.sw[a-z]
+*.un~
+Session.vim
+.netrwhist
