@@ -1,12 +1,17 @@
-use Modern::Perl;
-# use bigint;
-require Fibonacci;
+use Modern::Perl '2012';
+use bigint;
+use List::Util qw / reduce /;
+use Fibonacci;
 
 chomp(my $x = $ARGV[0]);
 
-say Fibonacci::sequence_members($x);
+my @fibs = Fibonacci::series($x);
+say "@fibs";
 
-my @fibs = Fibonacci::fibonacci4($x);
-print "@fibs";
+my @evens = Fibonacci::filter_evens(\@fibs);
+say "@evens";
 
-exit;
+my $sum = reduce {$a + $b} @evens;
+say $sum;
+
+#exit;
