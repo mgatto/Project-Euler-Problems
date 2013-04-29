@@ -47,3 +47,10 @@ Largest is the product of 987 and 143: 141141
 Largest is the product of 982 and 869: 853358
 
 Push onto an array and max() it.
+
+
+Addendum
+========
+
+This is actually the first of the 4 Project Euler problems where I didn't have
+to look up an algorithm in a math text :-) All on my own!
