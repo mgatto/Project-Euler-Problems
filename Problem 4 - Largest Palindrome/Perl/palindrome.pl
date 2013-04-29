@@ -2,12 +2,12 @@
 use Modern::Perl '2012';
 use List::Util qw(max);
 
-# no inputs;
 sub generate_largest_palindrome {
+    my($min_limit, $max_limit) = @_;
     my @candidates;
 
-    for (my $j = 999; $j >= 100; $j--) {
-        for (my $k = 999; $k >= 100; $k--) {
+    for (my $j = $max_limit; $j >= $min_limit; $j--) {
+        for (my $k = $max_limit; $k >= $min_limit; $k--) {
             my $candidate = $j * $k;
 
             if ( "$candidate" eq reverse "$candidate" ) {
@@ -20,9 +20,13 @@ sub generate_largest_palindrome {
     return max @candidates;
 }
 
-say generate_largest_palindrome();
-
+say generate_largest_palindrome(100, 999);
+say generate_largest_palindrome({
+    -min => 100,
+    -max => 999,
+});
 
 =begin Explanation
 
 =end
+=cut
