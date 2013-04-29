@@ -15,7 +15,6 @@ sub generate_largest_palindrome {
 
             if ( "$candidate" eq reverse "$candidate" ) {
                 push @candidates, $candidate;
-                #say "Largest is the product of $j and $k: " . $candidate;
             }
         }
     }
@@ -29,6 +28,8 @@ say generate_largest_palindrome({
 });
 
 =begin Explanation
+
+This is a brute force method.
 
 =end
 =cut
