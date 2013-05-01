@@ -13,6 +13,12 @@ sub series {
         ($a, $b) = ($b, $a + $b);
     }
 
+    #my ($n, $a, $b) = (shift, 0, 1);
+    #($a, $b) = ($b, $a + $b) while $n-- > 0;
+    #$a;
+
+    # Implicit return in Perl, since it returns the last evaluated statement
+    # if there is no 'return' keyword.
     @fibs;
 }
 
@@ -50,49 +56,14 @@ sub filter_evens {
 
 =begin GHOSTCODE
 
-sub nth_term {
+# this is recursive and should not be used!
+sub fibonacci_by_recursion {
+  # nth Fib number = a*x^n + (1-a)*y^n
+
     my $n = shift;
     return $n if $n < 2;
-    return fibonacci($n-1) + fibonacci($n-2);
 }
 
-{ my @fib;
-  sub nth_term_mimoized {
-    my $n = shift;
-    return $fib[$n] if defined $fib[$n];
-    return $fib[$n] = $n if $n < 2;
-    $fib[$n] = fib($n-1) + fib($n-2);
-  }
-}
-
-sub fibonacci2 {
-    my $n = shift;
-    my $f;
-
-    return undef if $n < 0;
-
-    if ($n == 0) {
-        $f = 0;
-    } elsif ($n == 1) {
-        $f = 1;
-    } else {
-        $f = fibonacci2($n - 1) + fibonacci2($n - 2);
-    }
-
-    return $f;
-}
-
-sub fibonacci3 {
-    my ($n) = @_;
-    ($n < 2) ? $n : fibonacci3($n - 2) + fibonacci3($n - 1);
-}
-
-# iterative
-sub fibonacci4 {
-    my ($n, $a, $b) = (shift, 0, 1);
-    ($a, $b) = ($b, $a + $b) while $n-- > 0;
-    $a;
-}
 =end GHOSTCODE
 =cut
 
