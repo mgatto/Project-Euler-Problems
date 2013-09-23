@@ -59,13 +59,9 @@ But, this is wrong because I didn't factor out repeated numbers in this, such as
 
 #### #1. For Loop Summing
 
-This solution reflects the spirit of the canonical solution contained in Project Euler's PDF. The canonical solution uses a defined function, then calls it thrice: once to sum factors of 3, once for factors of 5 and lastly to sum factors of 15: F(3) + F(5) - F(15). I used a single for loop in fully proceedural code.
-  
-This uses a test nested within a for loop. The test contains two conditions and sums at once.
+This uses a test nested within a `for` loop. The test contains two conditions and sums at once.
   
 Some posted solutions for PHP append each sum into an array and then add them at the end. I think that takes more memory than addition+substitution in place.
-  
-My rendition of the solution also appends an EOL char so it leaves a clean console :-)
 
 ```php
 <?php
@@ -86,9 +82,10 @@ function sum_for_loop(Array $terms, $max = 0) {
 
 Of course, this semi-generalized solution assumes that the `$terms` array will only have two elements. I'll need to explore how to loop through the terms and handle them, possibly with code generation?
 
-#### #1. Arithmetic Series
+#### #2. Arithmetic Series
 
-This is the most efficient algorithm, and is the preferred solution. 
+This solution reflects the spirit of the canonical solution contained in Project Euler's PDF.
+It is, by far, the most efficient algorithm.
 
 ```php
 function sum_arithmetic($multiple = 1, $limit = 0) {
