@@ -64,7 +64,6 @@ This uses a test nested within a `for` loop. The test contains two conditions an
 Some posted solutions for PHP append each sum into an array and then add them at the end. I think that takes more memory than addition+substitution in place.
 
 ```php
-<?php
 function sum_for_loop(Array $terms, $max = 0) {
     /* must have initialized variable so we can += below without PHP errors */
     $sum = 0;
