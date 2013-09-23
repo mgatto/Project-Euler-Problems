@@ -29,3 +29,18 @@ function sum_for_loop(Array $terms, $max = 0) {
 }
 
 var_dump(sum_for_loop(array(3,5), 1000)) . PHP_EOL;
+
+
+/**
+ *
+ */
+function sum_arithmetic($multiple = 1, $limit = 0) {
+    /* find max term for each multiple */
+    $max_term = intval(($limit - 1) / $multiple);
+    
+    /* sum arithmetically */
+    return ($multiple * ($max_term * ($max_term + 1))) / 2;
+}
+
+var_dump(sum_arithmetic()) . PHP_EOL;
+var_dump(sum_arithmetic(3, 1000) + sum_arithmetic(5, 1000) - sum_arithmetic(3 * 5, 1000)) . PHP_EOL;

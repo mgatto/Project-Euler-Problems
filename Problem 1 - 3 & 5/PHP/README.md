@@ -86,4 +86,16 @@ function sum_for_loop(Array $terms, $max = 0) {
 
 Of course, this semi-generalized solution assumes that the `$terms` array will only have two elements. I'll need to explore how to loop through the terms and handle them, possibly with code generation?
 
-#### #1. Arithmetic Progression
+#### #1. Arithmetic Series
+
+This is the most efficient algorithm, and is the preferred solution. 
+
+```php
+function sum_arithmetic($multiple = 1, $limit = 0) {
+    $max_term = intval(($limit - 1) / $multiple);
+    
+    return ($multiple * ($max_term * ($max_term + 1))) / 2;
+}
+```
+
+The parentheses placement were key...
