@@ -18,9 +18,6 @@ function sum_even_fibonacci($limit = 4000000)
     while( $sequence[count($sequence)-1] < $limit ) {
         /* must separate sequence generation from filtering for evens */
         $term = $sequence[count($sequence)-1] + $sequence[count($sequence)-2];
-
-        //echo $sequence[count($sequence)-1], ' + ', $sequence[count($sequence)-2], '= ', $term, '; limit = ',$limit , PHP_EOL;
-
         $sequence[] = $term;
 
         /* only add it if its an even number */
